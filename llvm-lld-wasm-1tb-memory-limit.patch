@@ -1,0 +1,13 @@
+diff --git a/lld/wasm/Writer.cpp b/lld/wasm/Writer.cpp
+index 7ed266a06..26ba1bbd8 100644
+--- a/lld/wasm/Writer.cpp
++++ b/lld/wasm/Writer.cpp
+@@ -468,7 +468,7 @@ void Writer::layoutMemory() {
+   if (ctx.arg.is64.value_or(false)) {
+     // TODO: Update once we decide on a reasonable limit here:
+     // https://github.com/WebAssembly/memory64/issues/33
+-    maxMemorySetting = 1ULL << 34;
++    maxMemorySetting = 1ULL << 40; // patch for BORA compilier!
+   }
+ 
+   if (ctx.arg.initialHeap != 0) {
